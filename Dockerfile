@@ -5,13 +5,15 @@ WORKDIR /app
 
 # Copy the requirements file and install Python dependencies
 COPY requirements.txt .
+COPY resource_parser.py .
+COPY notebooks/ notebooks/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Update apt-get and install default-jdk and wget (wget is needed for the download)
 RUN apt-get update && apt-get install -y default-jdk wget && rm -rf /var/lib/apt/lists/*
 
 # Download the jar file
-RUN wget https://github.com/synthetichealth/synthea/releases/download/master-branch-latest/synthea-with-dependencies.jar
+RUN git clone https://github.com/synthetichealth/synthea.git
 # Expose the port for the web server
 EXPOSE 8080
 # Set default command
