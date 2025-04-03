@@ -1,0 +1,119 @@
+{
+  "type": "record",
+  "name": "Patients",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "string"
+    },
+    {
+      "name": "BIRTHDATE",
+      "type": "string"
+    },
+    {
+      "name": "DEATHDATE",
+      "type": "int"
+    },
+    {
+      "name": "SSN",
+      "type": "string"
+    },
+    {
+      "name": "DRIVERS",
+      "type": "int"
+    },
+    {
+      "name": "PASSPORT",
+      "type": "int"
+    },
+    {
+      "name": "PREFIX",
+      "type": "int"
+    },
+    {
+      "name": "FIRST",
+      "type": "string"
+    },
+    {
+      "name": "MIDDLE",
+      "type": "string"
+    },
+    {
+      "name": "LAST",
+      "type": "string"
+    },
+    {
+      "name": "SUFFIX",
+      "type": "int"
+    },
+    {
+      "name": "MAIDEN",
+      "type": "int"
+    },
+    {
+      "name": "MARITAL",
+      "type": "int"
+    },
+    {
+      "name": "RACE",
+      "type": "string"
+    },
+    {
+      "name": "ETHNICITY",
+      "type": "string"
+    },
+    {
+      "name": "GENDER",
+      "type": "string"
+    },
+    {
+      "name": "BIRTHPLACE",
+      "type": "string"
+    },
+    {
+      "name": "ADDRESS",
+      "type": "string"
+    },
+    {
+      "name": "CITY",
+      "type": "string"
+    },
+    {
+      "name": "STATE",
+      "type": "string"
+    },
+    {
+      "name": "COUNTY",
+      "type": "string"
+    },
+    {
+      "name": "FIPS",
+      "type": "int"
+    },
+    {
+      "name": "ZIP",
+      "type": "int"
+    },
+    {
+      "name": "LAT",
+      "type": "float"
+    },
+    {
+      "name": "LON",
+      "type": "float"
+    },
+    {
+      "name": "HEALTHCARE_EXPENSES",
+      "type": "float"
+    },
+    {
+      "name": "HEALTHCARE_COVERAGE",
+      "type": "float"
+    },
+    {
+      "name": "INCOME",
+      "type": "int"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "type": "record",
+  "name": "Claims",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "string"
+    },
+    {
+      "name": "PATIENTID",
+      "type": "string"
+    },
+    {
+      "name": "PROVIDERID",
+      "type": "string"
+    },
+    {
+      "name": "PRIMARYPATIENTINSURANCEID",
+      "type": "string"
+    },
+    {
+      "name": "SECONDARYPATIENTINSURANCEID",
+      "type": "int"
+    },
+    {
+      "name": "DEPARTMENTID",
+      "type": "int"
+    },
+    {
+      "name": "PATIENTDEPARTMENTID",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSIS1",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSIS2",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSIS3",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSIS4",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSIS5",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSIS6",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSIS7",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSIS8",
+      "type": "int"
+    },
+    {
+      "name": "REFERRINGPROVIDERID",
+      "type": "int"
+    },
+    {
+      "name": "APPOINTMENTID",
+      "type": "string"
+    },
+    {
+      "name": "CURRENTILLNESSDATE",
+      "type": "string"
+    },
+    {
+      "name": "SERVICEDATE",
+      "type": "string"
+    },
+    {
+      "name": "SUPERVISINGPROVIDERID",
+      "type": "string"
+    },
+    {
+      "name": "STATUS1",
+      "type": "string"
+    },
+    {
+      "name": "STATUS2",
+      "type": "string"
+    },
+    {
+      "name": "STATUSP",
+      "type": "string"
+    },
+    {
+      "name": "OUTSTANDING1",
+      "type": "int"
+    },
+    {
+      "name": "OUTSTANDING2",
+      "type": "int"
+    },
+    {
+      "name": "OUTSTANDINGP",
+      "type": "int"
+    },
+    {
+      "name": "LASTBILLEDDATE1",
+      "type": "string"
+    },
+    {
+      "name": "LASTBILLEDDATE2",
+      "type": "string"
+    },
+    {
+      "name": "LASTBILLEDDATEP",
+      "type": "string"
+    },
+    {
+      "name": "HEALTHCARECLAIMTYPEID1",
+      "type": "int"
+    },
+    {
+      "name": "HEALTHCARECLAIMTYPEID2",
+      "type": "int"
+    }
+  ]
+}

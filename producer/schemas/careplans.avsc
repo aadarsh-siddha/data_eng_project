@@ -1,0 +1,43 @@
+{
+  "type": "record",
+  "name": "Careplans",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "string"
+    },
+    {
+      "name": "START",
+      "type": "string"
+    },
+    {
+      "name": "STOP",
+      "type": "int"
+    },
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "ENCOUNTER",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "int"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "REASONCODE",
+      "type": "int"
+    },
+    {
+      "name": "REASONDESCRIPTION",
+      "type": "string"
+    }
+  ]
+}

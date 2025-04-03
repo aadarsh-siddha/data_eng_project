@@ -1,0 +1,139 @@
+{
+  "type": "record",
+  "name": "Claims_transactions",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "ID",
+      "type": "string"
+    },
+    {
+      "name": "CLAIMID",
+      "type": "string"
+    },
+    {
+      "name": "CHARGEID",
+      "type": "int"
+    },
+    {
+      "name": "PATIENTID",
+      "type": "string"
+    },
+    {
+      "name": "TYPE",
+      "type": "string"
+    },
+    {
+      "name": "AMOUNT",
+      "type": "float"
+    },
+    {
+      "name": "METHOD",
+      "type": "int"
+    },
+    {
+      "name": "FROMDATE",
+      "type": "string"
+    },
+    {
+      "name": "TODATE",
+      "type": "string"
+    },
+    {
+      "name": "PLACEOFSERVICE",
+      "type": "string"
+    },
+    {
+      "name": "PROCEDURECODE",
+      "type": "int"
+    },
+    {
+      "name": "MODIFIER1",
+      "type": "int"
+    },
+    {
+      "name": "MODIFIER2",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSISREF1",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSISREF2",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSISREF3",
+      "type": "int"
+    },
+    {
+      "name": "DIAGNOSISREF4",
+      "type": "int"
+    },
+    {
+      "name": "UNITS",
+      "type": "int"
+    },
+    {
+      "name": "DEPARTMENTID",
+      "type": "int"
+    },
+    {
+      "name": "NOTES",
+      "type": "string"
+    },
+    {
+      "name": "UNITAMOUNT",
+      "type": "float"
+    },
+    {
+      "name": "TRANSFEROUTID",
+      "type": "int"
+    },
+    {
+      "name": "TRANSFERTYPE",
+      "type": "int"
+    },
+    {
+      "name": "PAYMENTS",
+      "type": "float"
+    },
+    {
+      "name": "ADJUSTMENTS",
+      "type": "float"
+    },
+    {
+      "name": "TRANSFERS",
+      "type": "float"
+    },
+    {
+      "name": "OUTSTANDING",
+      "type": "float"
+    },
+    {
+      "name": "APPOINTMENTID",
+      "type": "string"
+    },
+    {
+      "name": "LINENOTE",
+      "type": "int"
+    },
+    {
+      "name": "PATIENTINSURANCEID",
+      "type": "string"
+    },
+    {
+      "name": "FEESCHEDULEID",
+      "type": "int"
+    },
+    {
+      "name": "PROVIDERID",
+      "type": "string"
+    },
+    {
+      "name": "SUPERVISINGPROVIDERID",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "type": "record",
+  "name": "Procedures",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "START",
+      "type": "string"
+    },
+    {
+      "name": "STOP",
+      "type": "string"
+    },
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "ENCOUNTER",
+      "type": "string"
+    },
+    {
+      "name": "SYSTEM",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "int"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "BASE_COST",
+      "type": "float"
+    },
+    {
+      "name": "REASONCODE",
+      "type": "int"
+    },
+    {
+      "name": "REASONDESCRIPTION",
+      "type": "int"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "type": "record",
+  "name": "Allergies",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "START",
+      "type": "string"
+    },
+    {
+      "name": "STOP",
+      "type": "int"
+    },
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "ENCOUNTER",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "int"
+    },
+    {
+      "name": "SYSTEM",
+      "type": "string"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "TYPE",
+      "type": "string"
+    },
+    {
+      "name": "CATEGORY",
+      "type": "string"
+    },
+    {
+      "name": "REACTION1",
+      "type": "int"
+    },
+    {
+      "name": "DESCRIPTION1",
+      "type": "string"
+    },
+    {
+      "name": "SEVERITY1",
+      "type": "string"
+    },
+    {
+      "name": "REACTION2",
+      "type": "int"
+    },
+    {
+      "name": "DESCRIPTION2",
+      "type": "string"
+    },
+    {
+      "name": "SEVERITY2",
+      "type": "string"
+    }
+  ]
+}

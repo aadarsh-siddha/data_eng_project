@@ -1,0 +1,95 @@
+{
+  "type": "record",
+  "name": "Payers",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "string"
+    },
+    {
+      "name": "NAME",
+      "type": "string"
+    },
+    {
+      "name": "OWNERSHIP",
+      "type": "string"
+    },
+    {
+      "name": "ADDRESS",
+      "type": "int"
+    },
+    {
+      "name": "CITY",
+      "type": "int"
+    },
+    {
+      "name": "STATE_HEADQUARTERED",
+      "type": "int"
+    },
+    {
+      "name": "ZIP",
+      "type": "int"
+    },
+    {
+      "name": "PHONE",
+      "type": "int"
+    },
+    {
+      "name": "AMOUNT_COVERED",
+      "type": "float"
+    },
+    {
+      "name": "AMOUNT_UNCOVERED",
+      "type": "float"
+    },
+    {
+      "name": "REVENUE",
+      "type": "float"
+    },
+    {
+      "name": "COVERED_ENCOUNTERS",
+      "type": "int"
+    },
+    {
+      "name": "UNCOVERED_ENCOUNTERS",
+      "type": "int"
+    },
+    {
+      "name": "COVERED_MEDICATIONS",
+      "type": "int"
+    },
+    {
+      "name": "UNCOVERED_MEDICATIONS",
+      "type": "int"
+    },
+    {
+      "name": "COVERED_PROCEDURES",
+      "type": "int"
+    },
+    {
+      "name": "UNCOVERED_PROCEDURES",
+      "type": "int"
+    },
+    {
+      "name": "COVERED_IMMUNIZATIONS",
+      "type": "int"
+    },
+    {
+      "name": "UNCOVERED_IMMUNIZATIONS",
+      "type": "int"
+    },
+    {
+      "name": "UNIQUE_CUSTOMERS",
+      "type": "int"
+    },
+    {
+      "name": "QOLS_AVG",
+      "type": "float"
+    },
+    {
+      "name": "MEMBER_MONTHS",
+      "type": "int"
+    }
+  ]
+}

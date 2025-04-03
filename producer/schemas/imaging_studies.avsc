@@ -1,0 +1,59 @@
+{
+  "type": "record",
+  "name": "Imaging_studies",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "string"
+    },
+    {
+      "name": "DATE",
+      "type": "string"
+    },
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "ENCOUNTER",
+      "type": "string"
+    },
+    {
+      "name": "SERIES_UID",
+      "type": "string"
+    },
+    {
+      "name": "BODYSITE_CODE",
+      "type": "int"
+    },
+    {
+      "name": "BODYSITE_DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "MODALITY_CODE",
+      "type": "string"
+    },
+    {
+      "name": "MODALITY_DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "INSTANCE_UID",
+      "type": "string"
+    },
+    {
+      "name": "SOP_CODE",
+      "type": "string"
+    },
+    {
+      "name": "SOP_DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "PROCEDURE_CODE",
+      "type": "int"
+    }
+  ]
+}

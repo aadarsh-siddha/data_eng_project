@@ -1,0 +1,51 @@
+{
+  "type": "record",
+  "name": "Organizations",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "string"
+    },
+    {
+      "name": "NAME",
+      "type": "string"
+    },
+    {
+      "name": "ADDRESS",
+      "type": "string"
+    },
+    {
+      "name": "CITY",
+      "type": "string"
+    },
+    {
+      "name": "STATE",
+      "type": "string"
+    },
+    {
+      "name": "ZIP",
+      "type": "int"
+    },
+    {
+      "name": "LAT",
+      "type": "float"
+    },
+    {
+      "name": "LON",
+      "type": "float"
+    },
+    {
+      "name": "PHONE",
+      "type": "int"
+    },
+    {
+      "name": "REVENUE",
+      "type": "float"
+    },
+    {
+      "name": "UTILIZATION",
+      "type": "int"
+    }
+  ]
+}

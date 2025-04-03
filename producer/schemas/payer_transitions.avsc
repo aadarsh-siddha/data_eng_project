@@ -1,0 +1,39 @@
+{
+  "type": "record",
+  "name": "Payer_transitions",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "MEMBERID",
+      "type": "string"
+    },
+    {
+      "name": "START_DATE",
+      "type": "string"
+    },
+    {
+      "name": "END_DATE",
+      "type": "string"
+    },
+    {
+      "name": "PAYER",
+      "type": "string"
+    },
+    {
+      "name": "SECONDARY_PAYER",
+      "type": "int"
+    },
+    {
+      "name": "PLAN_OWNERSHIP",
+      "type": "string"
+    },
+    {
+      "name": "OWNER_NAME",
+      "type": "string"
+    }
+  ]
+}

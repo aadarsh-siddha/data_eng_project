@@ -1,0 +1,67 @@
+{
+  "type": "record",
+  "name": "Encounters",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "string"
+    },
+    {
+      "name": "START",
+      "type": "string"
+    },
+    {
+      "name": "STOP",
+      "type": "string"
+    },
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "ORGANIZATION",
+      "type": "string"
+    },
+    {
+      "name": "PROVIDER",
+      "type": "string"
+    },
+    {
+      "name": "PAYER",
+      "type": "string"
+    },
+    {
+      "name": "ENCOUNTERCLASS",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "int"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "BASE_ENCOUNTER_COST",
+      "type": "float"
+    },
+    {
+      "name": "TOTAL_CLAIM_COST",
+      "type": "float"
+    },
+    {
+      "name": "PAYER_COVERAGE",
+      "type": "float"
+    },
+    {
+      "name": "REASONCODE",
+      "type": "int"
+    },
+    {
+      "name": "REASONDESCRIPTION",
+      "type": "int"
+    }
+  ]
+}

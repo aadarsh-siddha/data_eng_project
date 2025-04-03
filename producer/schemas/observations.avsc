@@ -1,0 +1,43 @@
+{
+  "type": "record",
+  "name": "Observations",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "DATE",
+      "type": "string"
+    },
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "ENCOUNTER",
+      "type": "string"
+    },
+    {
+      "name": "CATEGORY",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "string"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "VALUE",
+      "type": "float"
+    },
+    {
+      "name": "UNITS",
+      "type": "string"
+    },
+    {
+      "name": "TYPE",
+      "type": "string"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "type": "record",
+  "name": "Medications",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "START",
+      "type": "string"
+    },
+    {
+      "name": "STOP",
+      "type": "int"
+    },
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "PAYER",
+      "type": "string"
+    },
+    {
+      "name": "ENCOUNTER",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "int"
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string"
+    },
+    {
+      "name": "BASE_COST",
+      "type": "float"
+    },
+    {
+      "name": "PAYER_COVERAGE",
+      "type": "float"
+    },
+    {
+      "name": "DISPENSES",
+      "type": "int"
+    },
+    {
+      "name": "TOTALCOST",
+      "type": "float"
+    },
+    {
+      "name": "REASONCODE",
+      "type": "int"
+    },
+    {
+      "name": "REASONDESCRIPTION",
+      "type": "int"
+    }
+  ]
+}

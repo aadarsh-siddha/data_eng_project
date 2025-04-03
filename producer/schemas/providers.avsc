@@ -1,0 +1,59 @@
+{
+  "type": "record",
+  "name": "Providers",
+  "namespace": "com.fhir.schemas",
+  "fields": [
+    {
+      "name": "Id",
+      "type": "string"
+    },
+    {
+      "name": "ORGANIZATION",
+      "type": "string"
+    },
+    {
+      "name": "NAME",
+      "type": "string"
+    },
+    {
+      "name": "GENDER",
+      "type": "string"
+    },
+    {
+      "name": "SPECIALITY",
+      "type": "string"
+    },
+    {
+      "name": "ADDRESS",
+      "type": "string"
+    },
+    {
+      "name": "CITY",
+      "type": "string"
+    },
+    {
+      "name": "STATE",
+      "type": "string"
+    },
+    {
+      "name": "ZIP",
+      "type": "int"
+    },
+    {
+      "name": "LAT",
+      "type": "float"
+    },
+    {
+      "name": "LON",
+      "type": "float"
+    },
+    {
+      "name": "ENCOUNTERS",
+      "type": "int"
+    },
+    {
+      "name": "PROCEDURES",
+      "type": "int"
+    }
+  ]
+}

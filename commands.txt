@@ -6,3 +6,12 @@ wget https://github.com/synthetichealth/synthea/releases/download/master-branch-
 
 
 java -jar synthea-with-dependencies.jar
+
+
+jupyter notebook --ip=0.0.0.0 --port=8080 --no-browser --allow-root
+
+
+./run_synthea --exporter.fhir.bulk_data=true
+
+
+./run_synthea -p 10 --exporter.fhir.bulk_data=true
