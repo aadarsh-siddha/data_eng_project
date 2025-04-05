@@ -9,13 +9,11 @@
     },
     {
       "name": "BIRTHDATE",
-      "type": "int",
-      "logicalType": "date"
+      "type": "string"
     },
     {
       "name": "DEATHDATE",
-      "type": "int",
-      "logicalType": "date",
+      "type": ["null","string"],
       "default": null 
     },
     {
@@ -41,7 +39,7 @@
     {
       "name": "MIDDLE",
       "type": "string",
-      "default": "" // Default to empty string to handle cases where middle name is not provided
+      "default": "" 
     },
     {
       "name": "LAST",
@@ -50,12 +48,12 @@
     {
       "name": "SUFFIX",
       "type": "string",
-      "default": "" // Default to empty string to handle cases where suffix is not provided
+      "default": "" 
     },
     {
       "name": "MAIDEN",
       "type": "string",
-      "default": "" // Default to empty string to handle cases where maiden name is not provided
+      "default": "" 
     },
     {
       "name": "MARITAL",
@@ -67,7 +65,8 @@
     },
     {
       "name": "ETHNICITY",
-      "type": "string"
+      "type": "string",
+      "default": "Unknown"
     },
     {
       "name": "GENDER",
