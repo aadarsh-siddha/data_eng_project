@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Patients",
-  "namespace": "com.fhir.schemas",
+  "name": "patients",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "Id",
@@ -9,11 +9,14 @@
     },
     {
       "name": "BIRTHDATE",
-      "type": "string"
+      "type": "int",
+      "logicalType": "date"
     },
     {
       "name": "DEATHDATE",
-      "type": "int"
+      "type": "int",
+      "logicalType": "date",
+      "default": null 
     },
     {
       "name": "SSN",
@@ -21,15 +24,15 @@
     },
     {
       "name": "DRIVERS",
-      "type": "int"
+      "type": "string"
     },
     {
       "name": "PASSPORT",
-      "type": "int"
+      "type": "string"
     },
     {
       "name": "PREFIX",
-      "type": "int"
+      "type": "string"
     },
     {
       "name": "FIRST",
@@ -37,7 +40,8 @@
     },
     {
       "name": "MIDDLE",
-      "type": "string"
+      "type": "string",
+      "default": "" // Default to empty string to handle cases where middle name is not provided
     },
     {
       "name": "LAST",
@@ -45,15 +49,17 @@
     },
     {
       "name": "SUFFIX",
-      "type": "int"
+      "type": "string",
+      "default": "" // Default to empty string to handle cases where suffix is not provided
     },
     {
       "name": "MAIDEN",
-      "type": "int"
+      "type": "string",
+      "default": "" // Default to empty string to handle cases where maiden name is not provided
     },
     {
       "name": "MARITAL",
-      "type": "int"
+      "type": "string"
     },
     {
       "name": "RACE",
@@ -97,23 +103,23 @@
     },
     {
       "name": "LAT",
-      "type": "float"
+      "type": "double"
     },
     {
       "name": "LON",
-      "type": "float"
+      "type": "double"
     },
     {
       "name": "HEALTHCARE_EXPENSES",
-      "type": "float"
+      "type": "double"
     },
     {
       "name": "HEALTHCARE_COVERAGE",
-      "type": "float"
+      "type": "double"
     },
     {
       "name": "INCOME",
-      "type": "int"
+      "type": "long"
     }
   ]
 }

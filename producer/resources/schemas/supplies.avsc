@@ -5,7 +5,8 @@
   "fields": [
     {
       "name": "DATE",
-      "type": "string"
+      "type": "int",
+      "logicalType": "date"
     },
     {
       "name": "PATIENT",
@@ -17,7 +18,7 @@
     },
     {
       "name": "CODE",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "DESCRIPTION",

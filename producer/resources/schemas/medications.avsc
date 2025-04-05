@@ -1,15 +1,18 @@
 {
   "type": "record",
-  "name": "Medications",
-  "namespace": "com.fhir.schemas",
+  "name": "medications",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "START",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "STOP",
-      "type": "int"
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "default": null // Allowing this field to be null, as it may not always be present
     },
     {
       "name": "PATIENT",
@@ -25,35 +28,43 @@
     },
     {
       "name": "CODE",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "DESCRIPTION",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "BASE_COST",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "PAYER_COVERAGE",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "DISPENSES",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "TOTALCOST",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "REASONCODE",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "REASONDESCRIPTION",
-      "type": "int"
+      "type": "string",
+      "default": null
     }
   ]
 }

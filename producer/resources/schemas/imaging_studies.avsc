@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Imaging_studies",
-  "namespace": "com.fhir.schemas",
+  "name": "imaging_studies",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "Id",
@@ -9,7 +9,8 @@
     },
     {
       "name": "DATE",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis" // Using timestamp-millis to represent the date of the imaging study
     },
     {
       "name": "PATIENT",
@@ -25,7 +26,7 @@
     },
     {
       "name": "BODYSITE_CODE",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "BODYSITE_DESCRIPTION",
@@ -53,7 +54,7 @@
     },
     {
       "name": "PROCEDURE_CODE",
-      "type": "int"
+      "type": "long"
     }
   ]
 }

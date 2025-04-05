@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Claims_transactions",
-  "namespace": "com.fhir.schemas",
+  "name": "claims_transactions",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "ID",
@@ -25,19 +25,25 @@
     },
     {
       "name": "AMOUNT",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "METHOD",
-      "type": "int"
+      "type": "string",
+      "default": null /* This field can be null to indicate no method specified */
     },
     {
       "name": "FROMDATE",
-      "type": "string"
+      "type": "long", 
+      "logicalType": "timestamp-millis",
+      "default": null /* This field can be null to indicate no from date specified */
     },
     {
       "name": "TODATE",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "default": null /* This field can be null to indicate no to date specified */
     },
     {
       "name": "PLACEOFSERVICE",
@@ -45,95 +51,118 @@
     },
     {
       "name": "PROCEDURECODE",
-      "type": "int"
+      "type": "long",
+      "default": null /* This field can be null to indicate no procedure code specified */
     },
     {
       "name": "MODIFIER1",
-      "type": "int"
+      "type": "string",
+      "default": null /* This field can be null to indicate no modifier specified */
     },
     {
       "name": "MODIFIER2",
-      "type": "int"
+      "type": "string",
+      "default": null /* This field can be null to indicate no modifier specified */
     },
     {
       "name": "DIAGNOSISREF1",
-      "type": "int"
+      "type": "int",
+      "default": null /* This field can be null to indicate no diagnosis reference specified */
     },
     {
       "name": "DIAGNOSISREF2",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "DIAGNOSISREF3",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "DIAGNOSISREF4",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "UNITS",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "DEPARTMENTID",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "NOTES",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "UNITAMOUNT",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "TRANSFEROUTID",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "TRANSFERTYPE",
-      "type": "int"
+      "type": "string",
+      "default": null
     },
     {
       "name": "PAYMENTS",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "ADJUSTMENTS",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "TRANSFERS",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "OUTSTANDING",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "APPOINTMENTID",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "LINENOTE",
-      "type": "int"
+      "type": "string",
+      "default": null
     },
     {
       "name": "PATIENTINSURANCEID",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "FEESCHEDULEID",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "PROVIDERID",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "SUPERVISINGPROVIDERID",
-      "type": "string"
+      "type": "string",
+      "default": null
     }
   ]
 }

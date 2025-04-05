@@ -1,11 +1,12 @@
 {
   "type": "record",
-  "name": "Immunizations",
-  "namespace": "com.fhir.schemas",
+  "name": "immunizations",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "DATE",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis" // Using timestamp-millis to represent the date of the immunization
     },
     {
       "name": "PATIENT",

@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Payers",
-  "namespace": "com.fhir.schemas",
+  "name": "payers",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "Id",
@@ -17,23 +17,28 @@
     },
     {
       "name": "ADDRESS",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "CITY",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "STATE_HEADQUARTERED",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "ZIP",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "PHONE",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "AMOUNT_COVERED",
@@ -85,7 +90,8 @@
     },
     {
       "name": "QOLS_AVG",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "MEMBER_MONTHS",

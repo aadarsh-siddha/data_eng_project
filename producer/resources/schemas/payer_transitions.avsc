@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Payer_transitions",
-  "namespace": "com.fhir.schemas",
+  "name": "payer_transitions",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "PATIENT",
@@ -9,15 +9,18 @@
     },
     {
       "name": "MEMBERID",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "START_DATE",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "END_DATE",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "PAYER",
@@ -25,15 +28,18 @@
     },
     {
       "name": "SECONDARY_PAYER",
-      "type": "int"
+      "type": "string",
+      "default": null 
     },
     {
       "name": "PLAN_OWNERSHIP",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "OWNER_NAME",
-      "type": "string"
+      "type": "string",
+      "default": null 
     }
   ]
 }

@@ -1,15 +1,18 @@
 {
   "type": "record",
-  "name": "Devices",
-  "namespace": "com.fhir.schemas",
+  "name": "devices",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "START",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "STOP",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "default": null // Allowing this field to be optional, as it may not always be present
     },
     {
       "name": "PATIENT",
@@ -21,7 +24,7 @@
     },
     {
       "name": "CODE",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "DESCRIPTION",

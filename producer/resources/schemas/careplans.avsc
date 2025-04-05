@@ -1,7 +1,7 @@
 {
   "type": "record",
   "name": "careplans",
-  "namespace": "com.fhir.schemas",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "Id",
@@ -9,11 +9,14 @@
     },
     {
       "name": "START",
-      "type": "string"
+      "type": "int",
+      "logicalType": "date"
     },
     {
       "name": "STOP",
-      "type": "string"
+      "type": "int",
+      "logicalType": "date",
+      "default": null 
     },
     {
       "name": "PATIENT",
@@ -29,15 +32,18 @@
     },
     {
       "name": "DESCRIPTION",
-      "type": "string"
+      "type": "string",
+      "default": null // This field can be null if no description is provided
     },
     {
       "name": "REASONCODE",
-      "type": "int"
+      "type": "int",
+      "default": null // This field can be null if no reason code is provided
     },
     {
       "name": "REASONDESCRIPTION",
-      "type": "string"
+      "type": "string",
+      "default": null // This field can be null if no reason description is provided 
     }
   ]
 }

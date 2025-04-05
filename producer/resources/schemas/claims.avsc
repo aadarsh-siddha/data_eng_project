@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Claims",
-  "namespace": "com.fhir.schemas",
+  "name": "claims",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "Id",
@@ -17,55 +17,68 @@
     },
     {
       "name": "PRIMARYPATIENTINSURANCEID",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "SECONDARYPATIENTINSURANCEID",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "DEPARTMENTID",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "PATIENTDEPARTMENTID",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "DIAGNOSIS1",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "DIAGNOSIS2",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "DIAGNOSIS3",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "DIAGNOSIS4",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "DIAGNOSIS5",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "DIAGNOSIS6",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "DIAGNOSIS7",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "DIAGNOSIS8",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "REFERRINGPROVIDERID",
-      "type": "int"
+      "type": "string",
+      "default": null
     },
     {
       "name": "APPOINTMENTID",
@@ -73,59 +86,78 @@
     },
     {
       "name": "CURRENTILLNESSDATE",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "default": null
     },
     {
       "name": "SERVICEDATE",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "default": null
     },
     {
       "name": "SUPERVISINGPROVIDERID",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "STATUS1",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "STATUS2",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "STATUSP",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "OUTSTANDING1",
-      "type": "int"
+      "type": "string",
+      "default": null
     },
     {
       "name": "OUTSTANDING2",
-      "type": "int"
+      "type": "string",
+      "default": null
     },
     {
       "name": "OUTSTANDINGP",
-      "type": "int"
+      "type": "string",
+      "default": null
     },
     {
       "name": "LASTBILLEDDATE1",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "default": null
     },
     {
       "name": "LASTBILLEDDATE2",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "default": null
     },
     {
       "name": "LASTBILLEDDATEP",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "default": null
     },
     {
       "name": "HEALTHCARECLAIMTYPEID1",
-      "type": "int"
+      "type": "int",
+      "default": null
     },
     {
       "name": "HEALTHCARECLAIMTYPEID2",
-      "type": "int"
+      "type": "int",
+      "default": null
     }
   ]
 }

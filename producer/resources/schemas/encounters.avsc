@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Encounters",
-  "namespace": "com.fhir.schemas",
+  "name": "encounters",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "Id",
@@ -9,11 +9,13 @@
     },
     {
       "name": "START",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "STOP",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "PATIENT",
@@ -37,7 +39,7 @@
     },
     {
       "name": "CODE",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "DESCRIPTION",
@@ -45,23 +47,27 @@
     },
     {
       "name": "BASE_ENCOUNTER_COST",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "TOTAL_CLAIM_COST",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "PAYER_COVERAGE",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "REASONCODE",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "REASONDESCRIPTION",
-      "type": "int"
+      "type": "string",
+      "default": null
     }
   ]
 }

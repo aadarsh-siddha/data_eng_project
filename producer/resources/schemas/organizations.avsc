@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Organizations",
-  "namespace": "com.fhir.schemas",
+  "name": "organizations",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "Id",
@@ -25,19 +25,19 @@
     },
     {
       "name": "ZIP",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "LAT",
-      "type": "float"
+      "type": "double"
     },
     {
       "name": "LON",
-      "type": "float"
+      "type": "double"
     },
     {
       "name": "PHONE",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "REVENUE",

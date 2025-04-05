@@ -1,7 +1,7 @@
 {
   "type": "record",
-  "name": "Providers",
-  "namespace": "com.fhir.schemas",
+  "name": "providers",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "Id",

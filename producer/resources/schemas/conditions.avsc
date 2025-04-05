@@ -1,15 +1,18 @@
 {
   "type": "record",
-  "name": "Conditions",
-  "namespace": "com.fhir.schemas",
+  "name": "conditions",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "START",
-      "type": "string"
+      "type": "int",
+      "logicalType": "date"
     },
     {
       "name": "STOP",
-      "type": "string"
+      "type": "int",
+      "logicalType": "date",
+      "default": null 
     },
     {
       "name": "PATIENT",
@@ -25,7 +28,7 @@
     },
     {
       "name": "CODE",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "DESCRIPTION",

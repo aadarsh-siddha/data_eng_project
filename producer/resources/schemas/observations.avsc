@@ -1,11 +1,12 @@
 {
   "type": "record",
-  "name": "Observations",
-  "namespace": "com.fhir.schemas",
+  "name": "observations",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "DATE",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "PATIENT",
@@ -13,31 +14,38 @@
     },
     {
       "name": "ENCOUNTER",
-      "type": "string"
+      "type": "string",
+      "default": null /* This allows the field to be optional, as it can be null if no encounter is associated */
     },
     {
       "name": "CATEGORY",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "CODE",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "DESCRIPTION",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "VALUE",
-      "type": "float"
+      "type": "float",
+      "default": null
     },
     {
       "name": "UNITS",
-      "type": "string"
+      "type": "string",
+      "default": null
     },
     {
       "name": "TYPE",
-      "type": "string"
+      "type": "string",
+      "default": null
     }
   ]
 }

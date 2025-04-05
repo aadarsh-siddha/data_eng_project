@@ -1,15 +1,17 @@
 {
   "type": "record",
-  "name": "Procedures",
-  "namespace": "com.fhir.schemas",
+  "name": "procedures",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "START",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "STOP",
-      "type": "string"
+      "type": "long",
+      "logicalType": "timestamp-millis"
     },
     {
       "name": "PATIENT",
@@ -25,7 +27,7 @@
     },
     {
       "name": "CODE",
-      "type": "int"
+      "type": "long"
     },
     {
       "name": "DESCRIPTION",
@@ -37,11 +39,13 @@
     },
     {
       "name": "REASONCODE",
-      "type": "int"
+      "type": "long",
+      "default": null
     },
     {
       "name": "REASONDESCRIPTION",
-      "type": "int"
+      "type": "string",
+      "default": null
     }
   ]
 }
