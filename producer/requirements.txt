@@ -5,3 +5,7 @@ seaborn
 numpy
 pandas
 fhir.resources
+confluent-kafka
+cachetools
+authlib
+fastavro
