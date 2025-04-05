@@ -1,6 +1,6 @@
 {
   "type": "record",
-  "name": "Careplans",
+  "name": "careplans",
   "namespace": "com.fhir.schemas",
   "fields": [
     {
@@ -13,7 +13,7 @@
     },
     {
       "name": "STOP",
-      "type": "int"
+      "type": "string"
     },
     {
       "name": "PATIENT",

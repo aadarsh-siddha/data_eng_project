@@ -1,0 +1,82 @@
+{
+  "type": "record",
+  "name": "allergies",
+  "namespace": "fhir.schemas",
+  "fields": [
+    {
+      "name": "START",
+      "type": ["int"],
+      "logicalType": "date",
+      "default": null
+    },
+    {
+      "name": "STOP",
+      "type": ["int"],
+      "logicalType": "date",
+      "default": null
+    },
+    {
+      "name": "PATIENT",
+      "type": "string"
+    },
+    {
+      "name": "ENCOUNTER",
+      "type": "string"
+    },
+    {
+      "name": "CODE",
+      "type": "int",
+      "default": null
+    },
+    {
+      "name": "SYSTEM",
+      "type": "string",
+      "default": null
+    },
+    {
+      "name": "DESCRIPTION",
+      "type": "string",
+      "default": null
+    },
+    {
+      "name": "TYPE",
+      "type": "string",
+      "default": null
+    },
+    {
+      "name": "CATEGORY",
+      "type": "string",
+      "default": null
+    },
+    {
+      "name": "REACTION1",
+      "type": "int",
+      "default": null
+    },
+    {
+      "name": "DESCRIPTION1",
+      "type": "string",
+      "default": null
+    },
+    {
+      "name": "SEVERITY1",
+      "type": "string",
+      "default": null
+    },
+    {
+      "name": "REACTION2",
+      "type": "int",
+      "default": null
+    },
+    {
+      "name": "DESCRIPTION2",
+      "type": "string",
+      "default": null
+    },
+    {
+      "name": "SEVERITY2",
+      "type": "string",
+      "default": null
+    }
+  ]
+}
