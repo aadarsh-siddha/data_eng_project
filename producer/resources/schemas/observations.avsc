@@ -5,8 +5,7 @@
   "fields": [
     {
       "name": "DATE",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": "string"
     },
     {
       "name": "PATIENT",
@@ -14,37 +13,37 @@
     },
     {
       "name": "ENCOUNTER",
-      "type": "string",
-      "default": null /* This allows the field to be optional, as it can be null if no encounter is associated */
+      "type": ["null","string"],
+      "default": null 
     },
     {
       "name": "CATEGORY",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "CODE",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "DESCRIPTION",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "VALUE",
-      "type": "float",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "UNITS",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "TYPE",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     }
   ]

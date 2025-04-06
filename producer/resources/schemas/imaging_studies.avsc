@@ -9,8 +9,7 @@
     },
     {
       "name": "DATE",
-      "type": "long",
-      "logicalType": "timestamp-millis" // Using timestamp-millis to represent the date of the imaging study
+      "type": "string"
     },
     {
       "name": "PATIENT",
@@ -26,35 +25,43 @@
     },
     {
       "name": "BODYSITE_CODE",
-      "type": "long"
+      "type": ["null","long"],
+      "default": null
     },
     {
       "name": "BODYSITE_DESCRIPTION",
-      "type": "string"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "MODALITY_CODE",
-      "type": "string"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "MODALITY_DESCRIPTION",
-      "type": "string"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "INSTANCE_UID",
-      "type": "string"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "SOP_CODE",
-      "type": "string"
+      "type": ["null","string"],
+      "default":null
     },
     {
       "name": "SOP_DESCRIPTION",
-      "type": "string"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "PROCEDURE_CODE",
-      "type": "long"
+      "type": ["null","long"],
+      "default": null
     }
   ]
 }

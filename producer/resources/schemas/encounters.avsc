@@ -9,13 +9,11 @@
     },
     {
       "name": "START",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": "string"
     },
     {
       "name": "STOP",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": "string"
     },
     {
       "name": "PATIENT",
@@ -47,26 +45,27 @@
     },
     {
       "name": "BASE_ENCOUNTER_COST",
-      "type": "float",
+      "type": ["null","float"],
       "default": null
     },
     {
       "name": "TOTAL_CLAIM_COST",
-      "type": "float",
+      "type": ["null","float"],
       "default": null
     },
     {
       "name": "PAYER_COVERAGE",
-      "type": "float",
+      "type": ["null","float"],
       "default": null
     },
     {
       "name": "REASONCODE",
-      "type": "long"
+      "type": ["null", "long"],
+      "default": null
     },
     {
       "name": "REASONDESCRIPTION",
-      "type": "string",
+      "type":  ["null","string"],
       "default": null
     }
   ]

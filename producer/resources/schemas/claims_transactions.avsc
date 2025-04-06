@@ -25,25 +25,23 @@
     },
     {
       "name": "AMOUNT",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "METHOD",
-      "type": "string",
-      "default": null /* This field can be null to indicate no method specified */
+      "type": ["null", "string"],
+      "default": null 
     },
     {
       "name": "FROMDATE",
-      "type": "long", 
-      "logicalType": "timestamp-millis",
-      "default": null /* This field can be null to indicate no from date specified */
+      "type": ["null", "string"], 
+      "default": null 
     },
     {
       "name": "TODATE",
-      "type": "long",
-      "logicalType": "timestamp-millis",
-      "default": null /* This field can be null to indicate no to date specified */
+      "type": ["null", "string"],
+      "default": null 
     },
     {
       "name": "PLACEOFSERVICE",
@@ -51,117 +49,117 @@
     },
     {
       "name": "PROCEDURECODE",
-      "type": "long",
-      "default": null /* This field can be null to indicate no procedure code specified */
+      "type": ["null", "long"],
+      "default": null 
     },
     {
       "name": "MODIFIER1",
-      "type": "string",
-      "default": null /* This field can be null to indicate no modifier specified */
+      "type": ["null", "string"],
+      "default": null 
     },
     {
       "name": "MODIFIER2",
-      "type": "string",
-      "default": null /* This field can be null to indicate no modifier specified */
+      "type": ["null", "string"],
+      "default": null
     },
     {
       "name": "DIAGNOSISREF1",
-      "type": "int",
-      "default": null /* This field can be null to indicate no diagnosis reference specified */
+      "type": ["null", "int"],
+      "default": null 
     },
     {
       "name": "DIAGNOSISREF2",
-      "type": "int",
+      "type": ["null", "int"],
       "default": null
     },
     {
       "name": "DIAGNOSISREF3",
-      "type": "int",
+      "type": ["null", "int"],
       "default": null
     },
     {
       "name": "DIAGNOSISREF4",
-      "type": "int",
+      "type": ["null", "int"],
       "default": null
     },
     {
       "name": "UNITS",
-      "type": "int",
+      "type": ["null", "int"],
       "default": null
     },
     {
       "name": "DEPARTMENTID",
-      "type": "int",
+      "type": ["null", "int"],
       "default": null
     },
     {
       "name": "NOTES",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "UNITAMOUNT",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "TRANSFEROUTID",
-      "type": "int",
+      "type": ["null", "int"],
       "default": null
     },
     {
       "name": "TRANSFERTYPE",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "PAYMENTS",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "ADJUSTMENTS",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "TRANSFERS",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "OUTSTANDING",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "APPOINTMENTID",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "LINENOTE",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "PATIENTINSURANCEID",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "FEESCHEDULEID",
-      "type": "int",
+      "type": ["null", "int"],
       "default": null
     },
     {
       "name": "PROVIDERID",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "SUPERVISINGPROVIDERID",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     }
   ]

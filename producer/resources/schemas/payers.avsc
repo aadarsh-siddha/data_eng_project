@@ -17,85 +17,98 @@
     },
     {
       "name": "ADDRESS",
-      "type": "int",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "CITY",
-      "type": "int",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "STATE_HEADQUARTERED",
-      "type": "int",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "ZIP",
-      "type": "int",
+      "type": ["null","int"],
       "default": null
     },
     {
       "name": "PHONE",
-      "type": "int",
+      "type": ["null","int"],
       "default": null
     },
     {
       "name": "AMOUNT_COVERED",
-      "type": "float"
+      "type": ["null","float"],
+      "default": null
     },
     {
       "name": "AMOUNT_UNCOVERED",
-      "type": "float"
+      "type": ["null","float"],
+      "default": null
     },
     {
       "name": "REVENUE",
-      "type": "float"
+      "type": ["null","float"],
+      "default": null
     },
     {
       "name": "COVERED_ENCOUNTERS",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     },
     {
       "name": "UNCOVERED_ENCOUNTERS",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     },
     {
       "name": "COVERED_MEDICATIONS",
-      "type": "int"
+      "type": ["null","int"],
+      "default": null
     },
     {
       "name": "UNCOVERED_MEDICATIONS",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     },
     {
       "name": "COVERED_PROCEDURES",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     },
     {
       "name": "UNCOVERED_PROCEDURES",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     },
     {
       "name": "COVERED_IMMUNIZATIONS",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     },
     {
       "name": "UNCOVERED_IMMUNIZATIONS",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     },
     {
       "name": "UNIQUE_CUSTOMERS",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     },
     {
       "name": "QOLS_AVG",
-      "type": "float",
+      "type": ["null","float"],
       "default": null
     },
     {
       "name": "MEMBER_MONTHS",
-      "type": "int"
+      "type": ["null","int"],
+      "default":null
     }
   ]
 }

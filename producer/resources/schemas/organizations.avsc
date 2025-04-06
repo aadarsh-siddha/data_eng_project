@@ -29,11 +29,11 @@
     },
     {
       "name": "LAT",
-      "type": "double"
+      "type": "float"
     },
     {
       "name": "LON",
-      "type": "double"
+      "type": "float"
     },
     {
       "name": "PHONE",

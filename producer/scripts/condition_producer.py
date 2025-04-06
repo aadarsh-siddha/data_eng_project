@@ -6,20 +6,20 @@ from confluent_kafka import Producer
 from confluent_kafka.schema_registry import SchemaRegistryClient
 from confluent_kafka.schema_registry.avro import AvroSerializer
 from confluent_kafka.serialization import StringSerializer, SerializationContext, MessageField
-from patient_record import PatientRecord, patient_record_to_dict
+from condition_record import ConditionRecord, condition_record_to_dict
 from settings import SCHEMA_REGISTRY_URL, BOOTSTRAP_SERVERS
 
-PATIENT_FILE = "../synthea/output/csv/patients.csv"
-PATIENT_VALUE_SCHEMA = "../resources/schemas/patients.avsc"
-TOPIC = "careplan"
+CONDITION_FILE = "../synthea/output/csv/conditions.csv"
+CONDITION_VALUE_SCHEMA = "../resources/schemas/conditions.avsc"
+TOPIC = "conditions"
 
-class PatientProducer():
+class ConditionProducer():
     def __init__(self, props: Dict):
         value_schema_str = self.load_schema(props['schema.value'])
         schema_registry_props = {'url': props['schema_registry.url']}
         schema_registry_client = SchemaRegistryClient(schema_registry_props)
         self.key_serializer = StringSerializer('utf_8')
-        self.value_serializer = AvroSerializer(schema_registry_client, value_schema_str, patient_record_to_dict)
+        self.value_serializer = AvroSerializer(schema_registry_client, value_schema_str, condition_record_to_dict)
 
         # Producer Configuration
         producer_props = {'bootstrap.servers': props['bootstrap.servers']}
@@ -39,7 +39,7 @@ class PatientProducer():
             reader = csv.reader(f)
             header = next(reader)  # skip the header
             for row in reader:
-                records.append(PatientRecord(row))
+                records.append(ConditionRecord(row))
         return records
 
     @staticmethod
@@ -50,11 +50,11 @@ class PatientProducer():
         print('Record {} successfully produced to {} [{}] at offset {}'.format(
             msg.key(), msg.topic(), msg.partition(), msg.offset()))
 
-    def publish(self, topic: str, records: [PatientRecord]):
+    def publish(self, topic: str, records: [ConditionRecord]):
         for value in records:
             try:
                 self.producer.produce(topic=topic,
-                                      key=self.key_serializer("patient", SerializationContext(topic=topic,
+                                      key=self.key_serializer("condition", SerializationContext(topic=topic,
                                                                                         field=MessageField.KEY)),
                                       value=self.value_serializer(value, SerializationContext(topic=topic,
                                                                                               field=MessageField.VALUE)),
@@ -71,8 +71,8 @@ if __name__ == "__main__":
     config = {
         'bootstrap.servers': BOOTSTRAP_SERVERS,
         'schema_registry.url': SCHEMA_REGISTRY_URL,
-        'schema.value': PATIENT_VALUE_SCHEMA
+        'schema.value': CONDITION_VALUE_SCHEMA
     }
-    producer = PatientProducer(props=config)
-    patient_records = producer.read_records(resource_path=PATIENT_FILE)
-    producer.publish(topic=TOPIC, records=patient_records)
+    producer = ConditionProducer(props=config)
+    records = producer.read_records(resource_path=CONDITION_FILE)
+    producer.publish(topic=TOPIC, records=records)

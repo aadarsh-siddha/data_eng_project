@@ -5,14 +5,12 @@
   "fields": [
     {
       "name": "START",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": "string"
     },
     {
       "name": "STOP",
-      "type": "long",
-      "logicalType": "timestamp-millis",
-      "default": null // Allowing this field to be optional, as it may not always be present
+      "type": ["null", "string"],
+      "default": null 
     },
     {
       "name": "PATIENT",

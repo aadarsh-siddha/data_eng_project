@@ -30,7 +30,7 @@ class PatientRecord:
         self.LAT= float(arr[23])
         self.LON= float(arr[24])
         self.HEALTHCARE_EXPENSES= float(arr[25])
-        self.HEALTHCARE_COVERAGE= float(arr[25])
+        self.HEALTHCARE_COVERAGE= float(arr[26])
         self.INCOME= int(arr[27])
         
     @classmethod

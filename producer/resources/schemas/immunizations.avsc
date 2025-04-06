@@ -5,8 +5,7 @@
   "fields": [
     {
       "name": "DATE",
-      "type": "long",
-      "logicalType": "timestamp-millis" // Using timestamp-millis to represent the date of the immunization
+      "type": "string"
     },
     {
       "name": "PATIENT",

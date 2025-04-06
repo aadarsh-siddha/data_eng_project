@@ -17,67 +17,67 @@
     },
     {
       "name": "PRIMARYPATIENTINSURANCEID",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "SECONDARYPATIENTINSURANCEID",
-      "type": "int",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "DEPARTMENTID",
-      "type": "int",
+      "type": ["null","int"],
       "default": null
     },
     {
       "name": "PATIENTDEPARTMENTID",
-      "type": "int",
+      "type": ["null","int"],
       "default": null
     },
     {
       "name": "DIAGNOSIS1",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "DIAGNOSIS2",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "DIAGNOSIS3",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "DIAGNOSIS4",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "DIAGNOSIS5",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "DIAGNOSIS6",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "DIAGNOSIS7",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "DIAGNOSIS8",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "REFERRINGPROVIDERID",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
@@ -86,77 +86,72 @@
     },
     {
       "name": "CURRENTILLNESSDATE",
-      "type": "long",
-      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "SERVICEDATE",
-      "type": "long",
-      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "SUPERVISINGPROVIDERID",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "STATUS1",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "STATUS2",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "STATUSP",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "OUTSTANDING1",
-      "type": "string",
+      "type": ["null","float"],
       "default": null
     },
     {
       "name": "OUTSTANDING2",
-      "type": "string",
+      "type": ["null","float"],
       "default": null
     },
     {
       "name": "OUTSTANDINGP",
-      "type": "string",
+      "type": ["null","float"],
       "default": null
     },
     {
       "name": "LASTBILLEDDATE1",
-      "type": "long",
-      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "LASTBILLEDDATE2",
-      "type": "long",
-      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "LASTBILLEDDATEP",
-      "type": "long",
-      "logicalType": "timestamp-millis", // Use logical type for date/time representation
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "HEALTHCARECLAIMTYPEID1",
-      "type": "int",
+      "type": ["null","int"],
       "default": null
     },
     {
       "name": "HEALTHCARECLAIMTYPEID2",
-      "type": "int",
+      "type": ["null","int"],
       "default": null
     }
   ]

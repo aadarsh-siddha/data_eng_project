@@ -9,36 +9,37 @@
     },
     {
       "name": "MEMBERID",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "START_DATE",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "END_DATE",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "PAYER",
-      "type": "string"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "SECONDARY_PAYER",
-      "type": "string",
+      "type": ["null","string"],
       "default": null 
     },
     {
       "name": "PLAN_OWNERSHIP",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     },
     {
       "name": "OWNER_NAME",
-      "type": "string",
+      "type": ["null","string"],
       "default": null 
     }
   ]

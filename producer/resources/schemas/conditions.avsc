@@ -5,13 +5,11 @@
   "fields": [
     {
       "name": "START",
-      "type": "int",
-      "logicalType": "date"
+      "type": "string"
     },
     {
       "name": "STOP",
-      "type": "int",
-      "logicalType": "date",
+      "type": ["null", "string"],
       "default": null 
     },
     {

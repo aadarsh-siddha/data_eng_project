@@ -5,14 +5,12 @@
   "fields": [
     {
       "name": "START",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": "string"
     },
     {
       "name": "STOP",
-      "type": "long",
-      "logicalType": "timestamp-millis",
-      "default": null // Allowing this field to be null, as it may not always be present
+      "type": ["null", "string"],
+      "default": null 
     },
     {
       "name": "PATIENT",
@@ -28,42 +26,42 @@
     },
     {
       "name": "CODE",
-      "type": "long",
+      "type": ["null", "long"],
       "default": null
     },
     {
       "name": "DESCRIPTION",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "BASE_COST",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "PAYER_COVERAGE",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "DISPENSES",
-      "type": "int",
+      "type": ["null", "int"],
       "default": null
     },
     {
       "name": "TOTALCOST",
-      "type": "float",
+      "type": ["null", "float"],
       "default": null
     },
     {
       "name": "REASONCODE",
-      "type": "long",
+      "type": ["null", "long"],
       "default": null
     },
     {
       "name": "REASONDESCRIPTION",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     }
   ]
