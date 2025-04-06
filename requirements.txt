@@ -1,7 +1,0 @@
-Ipython
-jupyter
-matplotlib
-seaborn
-numpy
-pandas
-fhir.resources
