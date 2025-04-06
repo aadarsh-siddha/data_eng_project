@@ -5,14 +5,12 @@
   "fields": [
     {
       "name": "START",
-      "type": ["int"],
-      "logicalType": "date",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "STOP",
-      "type": ["int"],
-      "logicalType": "date",
+      "type": ["null", "string"],
       "default": null
     },
     {
@@ -25,57 +23,57 @@
     },
     {
       "name": "CODE",
-      "type": "int",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "SYSTEM",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "DESCRIPTION",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "TYPE",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "CATEGORY",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "REACTION1",
-      "type": "int",
+      "type": ["null","int"],
       "default": null
     },
     {
       "name": "DESCRIPTION1",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "SEVERITY1",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "REACTION2",
-      "type": "int",
+      "type": ["null","int"],
       "default": null
     },
     {
       "name": "DESCRIPTION2",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     },
     {
       "name": "SEVERITY2",
-      "type": "string",
+      "type": ["null", "string"],
       "default": null
     }
   ]

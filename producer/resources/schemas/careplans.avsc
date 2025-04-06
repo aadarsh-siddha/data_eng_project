@@ -9,13 +9,12 @@
     },
     {
       "name": "START",
-      "type": "int",
-      "logicalType": "date"
+      "type": ["null", "string"],
+      "default": null
     },
     {
       "name": "STOP",
-      "type": "int",
-      "logicalType": "date",
+      "type": ["null", "string"],
       "default": null 
     },
     {
@@ -28,22 +27,23 @@
     },
     {
       "name": "CODE",
-      "type": "int"
+      "type": ["null", "int"],
+      "default": null
     },
     {
       "name": "DESCRIPTION",
-      "type": "string",
-      "default": null // This field can be null if no description is provided
+      "type": ["null", "string"],
+      "default": null 
     },
     {
       "name": "REASONCODE",
-      "type": "int",
-      "default": null // This field can be null if no reason code is provided
+      "type": ["null", "int"],
+      "default": null 
     },
     {
       "name": "REASONDESCRIPTION",
-      "type": "string",
-      "default": null // This field can be null if no reason description is provided 
+      "type": ["null", "string"],
+      "default": null 
     }
   ]
 }
