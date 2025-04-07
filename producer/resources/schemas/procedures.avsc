@@ -5,13 +5,12 @@
   "fields": [
     {
       "name": "START",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": "string"
     },
     {
       "name": "STOP",
-      "type": "long",
-      "logicalType": "timestamp-millis"
+      "type": ["null","string"],
+      "default": null
     },
     {
       "name": "PATIENT",
@@ -39,12 +38,12 @@
     },
     {
       "name": "REASONCODE",
-      "type": "long",
+      "type": ["null","long"],
       "default": null
     },
     {
       "name": "REASONDESCRIPTION",
-      "type": "string",
+      "type": ["null","string"],
       "default": null
     }
   ]

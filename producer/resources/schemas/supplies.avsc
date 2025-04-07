@@ -1,12 +1,11 @@
 {
   "type": "record",
   "name": "Supplies",
-  "namespace": "com.fhir.schemas",
+  "namespace": "fhir.schemas",
   "fields": [
     {
       "name": "DATE",
-      "type": "int",
-      "logicalType": "date"
+      "type": "string"
     },
     {
       "name": "PATIENT",
