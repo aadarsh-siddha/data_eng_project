@@ -8,6 +8,7 @@ COPY requirements.txt .
 COPY notebooks/ notebooks/
 COPY scripts/ scripts/
 COPY resources/ resources/
+COPY main_script.py .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Update apt-get and install default-jdk and wget (wget is needed for the download)
@@ -18,4 +19,4 @@ RUN git clone https://github.com/synthetichealth/synthea.git
 # Expose the port for the web server
 EXPOSE 8080
 # Set default command
-CMD ["/bin/bash"]
+CMD ["python3", "main_script.py"]
