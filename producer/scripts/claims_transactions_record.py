@@ -1,7 +1,7 @@
 from typing import List, Dict
 
 
-class Claims_Transaction_Record:
+class Claims_transactionRecord:
 
     def __init__(self, arr: List[str]):
         self.ID= arr[0]
@@ -85,8 +85,8 @@ def dict_to_claims_transaction_record(obj, ctx):
     if obj is None:
         return None
 
-    return Claims_Transaction_Record.from_dict(obj)
+    return Claims_transactionRecord.from_dict(obj)
 
 
-def claims_transaction_record_to_dict(claims_transaction_record: Claims_Transaction_Record, ctx):
+def claims_transaction_record_to_dict(claims_transaction_record: Claims_transactionRecord, ctx):
     return claims_transaction_record.__dict__

@@ -25,14 +25,13 @@ class PatientRecord:
         self.CITY= arr[18]
         self.STATE= arr[19]
         self.COUNTY= arr[20]
-        self.FIPS= int(arr[21])
-        self.ZIP= int(arr[22])
-        self.LAT= float(arr[23])
-        self.LON= float(arr[24])
-        self.HEALTHCARE_EXPENSES= float(arr[25])
-        self.HEALTHCARE_COVERAGE= float(arr[26])
-        self.INCOME= int(arr[27])
-        
+        self.FIPS= int(arr[21]) if arr[21].strip() else None
+        self.ZIP= int(arr[22]) if arr[22].strip() else None
+        self.LAT= float(arr[23]) if arr[23].strip() else None
+        self.LON= float(arr[24]) if arr[24].strip() else None
+        self.HEALTHCARE_EXPENSES= float(arr[25]) if arr[25].strip() else None
+        self.HEALTHCARE_COVERAGE= float(arr[26]) if arr[26].strip() else None
+        self.INCOME= int(arr[27]) if arr[27].strip() else None
     @classmethod
     def from_dict(cls, d: Dict):
         return cls(arr=[

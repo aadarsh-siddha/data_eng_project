@@ -12,7 +12,7 @@ class OrganizationRecord:
         self.ZIP = int( arr[5]) if  arr[5].strip() else None
         self.LAT= float(arr[6]) if arr[6].strip() else None
         self.LON= float(arr[7]) if arr[7].strip() else None
-        self.PHONE= int(arr[8]) if arr[8].strip() else None
+        self.PHONE= arr[8]
         self.REVENUE=  float(arr[9]) if arr[9].strip() else None
         self.UTILIZATION= int(arr[10]) if arr[10].strip() else None
         

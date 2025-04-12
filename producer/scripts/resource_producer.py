@@ -53,9 +53,9 @@ def read_schema_registry_config(file_path):
     return new_dict
 
 def get_record_module(resource: str):
-    if resource.endswith('s'):
-        resource = resource[:-1]
     module_name = f"{resource}_record"
+    if resource.endswith('s') and resource not in ['allergies','supplies','imaging_studies']:
+        resource = resource[:-1]
     class_name = f"{resource.capitalize()}Record"
     func_name = f"{resource}_record_to_dict"
 

@@ -1,29 +1,37 @@
 import subprocess
 import os
 def run_producers():
-    producers = [
-            'allergies_producer.py',
-            'careplan_producer.py',
-            'claims_producer.py',
-            'claims_transaction_producer.py',
-            'condition_producer.py',
-            'device_producer.py',
-            'encounter_producer.py',
-            'imaging_studies_producer.py',
-            'immunizations_producer.py',
-            'medications_producer.py',
-            'observations_producer.py',
-            'organizations_producer.py',
-            'patient_producer.py',
-            'payer_transitions_producer.py',
-            'payers_producer.py',
-            'procedures_producer.py',
-            'providers_producer.py',
-            'supplies_producer.py'
+    resources = [
+            'allergies',
+            'careplans',
+            'claims',
+            'claims_transactions',
+            'conditions',
+            'devices',
+            'encounters',
+            'imaging_studies',
+            'immunizations',
+            'medications',
+            'observations',
+            'organizations',
+            'patients',
+            'payer_transitions',
+            'payers',
+            'procedures',
+            'providers',
+            'supplies'
         ]
     os.chdir('/app/scripts')
-    for producer in producers:
-        subprocess.run(['python3',producer])
+    for resource in resources:
+        subprocess.run([
+            "python", "resource_producer.py",
+            "--csv", "../synthea/output/csv",
+            "--schema", "../resources/schemas",
+            "--class_path", "patient_record.py",
+            "--config", "../.env/client.properties",
+            "--registry", "../.env/api-key-RHBXA2J2GSIWP7YD.txt",
+            "--resource", resource
+        ])
 
 if __name__ == "__main__":
     run_producers()

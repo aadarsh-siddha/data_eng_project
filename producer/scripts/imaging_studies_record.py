@@ -1,7 +1,7 @@
 from typing import List, Dict
 
 
-class Imaging_Study_Record:
+class Imaging_studiesRecord:
 
     def __init__(self, arr: List[str]):
         self.Id= arr[0]
@@ -45,8 +45,8 @@ def dict_to_imaging_study_record(obj, ctx):
     if obj is None:
         return None
 
-    return Imaging_Study_Record.from_dict(obj)
+    return Imaging_studiesRecord.from_dict(obj)
 
 
-def imaging_study_record_to_dict(imaging_study_record: Imaging_Study_Record, ctx):
+def imaging_studies_record_to_dict(imaging_study_record: Imaging_studiesRecord, ctx):
     return imaging_study_record.__dict__

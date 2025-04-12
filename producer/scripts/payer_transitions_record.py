@@ -1,7 +1,7 @@
 from typing import List, Dict
 
 
-class Payer_Transition_Record:
+class Payer_transitionRecord:
 
     def __init__(self, arr: List[str]):
         self.PATIENT= arr[0]
@@ -35,8 +35,8 @@ def dict_to_payer_transition_record(obj, ctx):
     if obj is None:
         return None
 
-    return Payer_Transition_Record.from_dict(obj)
+    return Payer_transitionRecord.from_dict(obj)
 
 
-def payer_transition_record_to_dict(_record: Payer_Transition_Record, ctx):
+def payer_transition_record_to_dict(_record: Payer_transitionRecord, ctx):
     return _record.__dict__

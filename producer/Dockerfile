@@ -9,7 +9,7 @@ COPY notebooks/ notebooks/
 COPY scripts/ scripts/
 COPY resources/ resources/
 COPY main_script.py .
-COPY confluent_files/ confluent_files/
+COPY .env/ .env/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Update apt-get and install default-jdk and wget (wget is needed for the download)
