@@ -68,7 +68,7 @@ def get_record_module(resource: str):
         raise ImportError(f"Could not load resource module for '{resource}': {e}")
 
 
-class PatientProducer():
+class ResourceProducer():
     def __init__(self, kafka_config: Dict,schema_registry_config: Dict, extra_config: Dict):
         value_schema_str = self.load_schema(extra_config['RESOURCE_VALUE_SCHEMA'])
         schema_registry_client = SchemaRegistryClient(schema_registry_config)
