@@ -28,8 +28,7 @@ def run_producers():
             "--csv", "../synthea/output/csv",
             "--schema", "../resources/schemas",
             "--class_path", "patient_record.py",
-            "--config", "../.env/client.properties",
-            "--registry", "../.env/api-key-RHBXA2J2GSIWP7YD.txt",
+            "--config", "../config/kafka_config.json",
             "--resource", resource
         ])
 

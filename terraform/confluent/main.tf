@@ -27,7 +27,7 @@ resource "confluent_environment" "staging" {
 # Update the config to use a cloud provider and region of your choice.
 # https://registry.terraform.io/providers/confluentinc/confluent/latest/docs/resources/confluent_kafka_cluster
 resource "confluent_kafka_cluster" "standard" {
-  display_name = "inventory"
+  display_name = "fhir_cluster"
   availability = "SINGLE_ZONE"
   cloud        = "AWS"
   region       = "us-east-1"
@@ -41,7 +41,7 @@ resource "confluent_kafka_cluster" "standard" {
 // to 'app-producer' and 'app-consumer' service accounts.
 resource "confluent_service_account" "app-manager" {
   display_name = "app-manager"
-  description  = "Service account to manage 'inventory' Kafka cluster"
+  description  = "Service account to manage 'fhir_cluster' Kafka cluster"
 }
 
 resource "confluent_role_binding" "app-manager-kafka-cluster-admin" {
@@ -104,7 +104,7 @@ resource "confluent_kafka_topic" "topics" {
 
 resource "confluent_service_account" "app-consumer" {
   display_name = "app-consumer"
-  description  = "Service account to consume from 'patients' topic of 'inventory' Kafka cluster"
+  description  = "Service account to consume from 'patients' topic of 'fhir_cluster' Kafka cluster"
 }
 
 resource "confluent_api_key" "app-consumer-kafka-api-key" {
@@ -130,13 +130,13 @@ resource "confluent_api_key" "app-consumer-kafka-api-key" {
 resource "confluent_role_binding" "app-producer-developer-write" {
   for_each   = toset(var.kafka_topics)
   principal   = "User:${confluent_service_account.app-producer.id}"
-  role_name   = "DeveloperWrite"
+  role_name   = "ResourceOwner"
   crn_pattern = "${confluent_kafka_cluster.standard.rbac_crn}/kafka=${confluent_kafka_cluster.standard.id}/topic=${each.key}"
 }
 
 resource "confluent_service_account" "app-producer" {
   display_name = "app-producer"
-  description  = "Service account to produce to 'patients' topic of 'inventory' Kafka cluster"
+  description  = "Service account to produce to 'patients' topic of 'fhir_cluster' Kafka cluster"
 }
 
 resource "confluent_api_key" "app-producer-kafka-api-key" {
@@ -232,6 +232,9 @@ resource "aws_secretsmanager_secret_version" "producer_kafka_config_version" {
     schema_registry_api_secret  = confluent_api_key.schema_registry_api_key.secret
     schema_registry_environment = confluent_environment.staging.id
   })
+  lifecycle {
+    prevent_destroy = true
+  }
 
   depends_on = [
     confluent_api_key.app-producer-kafka-api-key,

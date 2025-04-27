@@ -221,3 +221,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 terraform/producer/.terraform.lock.hcl
+ec2-keypair.pem
