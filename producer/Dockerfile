@@ -16,7 +16,8 @@ RUN apt-get update && apt-get install -y default-jdk wget && rm -rf /var/lib/apt
 
 # Download the jar file
 RUN git clone https://github.com/synthetichealth/synthea.git
-# Expose the port for the web server
-EXPOSE 8080
-# Set default command
-CMD ["/bin/bash"]
+# Expose Jupyter port
+EXPOSE 8888
+
+# Start Jupyter Notebook when container runs
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]
