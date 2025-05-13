@@ -31,7 +31,7 @@ def read_config(file_path):
     kafka_config['sasl.username'] = data['kafka_api_key']
     kafka_config['sasl.password'] = data['kafka_api_secret']
     kafka_config['sasl.mechanism'] = data['sasl_mechanism']
-    # kafka_config['sasl.protocol'] = data['sasl_protocol']
+    kafka_config['security.protocol'] = data['sasl_protocol']
     schema_registry_config = {}
     schema_registry_config['basic.auth.user.info'] = data['schema_registry_api_key'] + ':' + data['schema_registry_api_secret']
     schema_registry_config['url'] = data['schema_registry_endpoint']

@@ -69,13 +69,6 @@ resource "confluent_api_key" "app-manager-kafka-api-key" {
     }
   }
 
-  # The goal is to ensure that confluent_role_binding.app-manager-kafka-cluster-admin is created before
-  # confluent_api_key.app-manager-kafka-api-key is used to create instances of
-  # confluent_kafka_topic, confluent_kafka_acl resources.
-
-  # 'depends_on' meta-argument is specified in confluent_api_key.app-manager-kafka-api-key to avoid having
-  # multiple copies of this definition in the configuration which would happen if we specify it in
-  # confluent_kafka_topic, confluent_kafka_acl resources instead.
   depends_on = [
     confluent_role_binding.app-manager-kafka-cluster-admin
   ]
@@ -100,38 +93,6 @@ resource "confluent_kafka_topic" "topics" {
     key    = confluent_api_key.app-manager-kafka-api-key.id
     secret = confluent_api_key.app-manager-kafka-api-key.secret
   }
-}
-
-resource "confluent_service_account" "app-consumer" {
-  display_name = "app-consumer"
-  description  = "Service account to consume from 'patients' topic of 'fhir_cluster' Kafka cluster"
-}
-
-resource "confluent_api_key" "app-consumer-kafka-api-key" {
-  display_name = "app-consumer-kafka-api-key"
-  description  = "Kafka API Key that is owned by 'app-consumer' service account"
-  owner {
-    id          = confluent_service_account.app-consumer.id
-    api_version = confluent_service_account.app-consumer.api_version
-    kind        = confluent_service_account.app-consumer.kind
-  }
-
-  managed_resource {
-    id          = confluent_kafka_cluster.standard.id
-    api_version = confluent_kafka_cluster.standard.api_version
-    kind        = confluent_kafka_cluster.standard.kind
-
-    environment {
-      id = confluent_environment.staging.id
-    }
-  }
-}
-
-resource "confluent_role_binding" "app-producer-developer-write" {
-  for_each   = toset(var.kafka_topics)
-  principal   = "User:${confluent_service_account.app-producer.id}"
-  role_name   = "ResourceOwner"
-  crn_pattern = "${confluent_kafka_cluster.standard.rbac_crn}/kafka=${confluent_kafka_cluster.standard.id}/topic=${each.key}"
 }
 
 resource "confluent_service_account" "app-producer" {
@@ -159,28 +120,6 @@ resource "confluent_api_key" "app-producer-kafka-api-key" {
   }
 }
 
-// Note that in order to consume from a topic, the principal of the consumer ('app-consumer' service account)
-// needs to be authorized to perform 'READ' operation on both Topic and Group resources:
-resource "confluent_role_binding" "app-consumer-developer-read-from-topic" {
-  for_each   = toset(var.kafka_topics)
-  principal   = "User:${confluent_service_account.app-consumer.id}"
-  role_name   = "DeveloperRead"
-  crn_pattern = "${confluent_kafka_cluster.standard.rbac_crn}/kafka=${confluent_kafka_cluster.standard.id}/topic=${each.key}"
-}
-
-resource "confluent_role_binding" "app-consumer-developer-read-from-group" {
-  principal = "User:${confluent_service_account.app-consumer.id}"
-  role_name = "DeveloperRead"
-  // The existing value of crn_pattern's suffix (group=confluent_cli_consumer_*) are set up to match Confluent CLI's default consumer group ID ("confluent_cli_consumer_<uuid>").
-  // https://docs.confluent.io/confluent-cli/current/command-reference/kafka/topic/confluent_kafka_topic_consume.html
-  // Update it to match your target consumer group ID.
-  crn_pattern = "${confluent_kafka_cluster.standard.rbac_crn}/kafka=${confluent_kafka_cluster.standard.id}/group=confluent_cli_consumer_*"
-}
-
-
-
-# Schema Registry Setup
-
 data "confluent_schema_registry_cluster" "essentials" {
   environment {
     id = confluent_environment.staging.id
@@ -190,15 +129,42 @@ data "confluent_schema_registry_cluster" "essentials" {
     confluent_kafka_cluster.standard
   ]
 }
+# Grant Schema Registry READ/WRITE on all subjects to app-producer
+resource "confluent_role_binding" "app-producer-schema-registry-read-all" {
+  principal   = "User:${confluent_service_account.app-producer.id}"
+  role_name   = "DeveloperRead"
+  crn_pattern = "${data.confluent_schema_registry_cluster.essentials.resource_name}/subject=*"
+}
 
-resource "confluent_api_key" "schema_registry_api_key" {
-  display_name = "schema-registry-api-key"
-  description  = "API Key for Schema Registry access"
+resource "confluent_role_binding" "app-producer-schema-registry-write-all" {
+  principal   = "User:${confluent_service_account.app-producer.id}"
+  role_name   = "DeveloperWrite"
+  crn_pattern = "${data.confluent_schema_registry_cluster.essentials.resource_name}/subject=*"
+}
+
+resource "confluent_role_binding" "app-producer-developer-write" {
+  for_each     = toset(var.kafka_topics)
+  principal    = "User:${confluent_service_account.app-producer.id}"
+  role_name    = "DeveloperWrite"
+  crn_pattern  = "${confluent_kafka_cluster.standard.rbac_crn}/kafka=${confluent_kafka_cluster.standard.id}/topic=${each.key}"
+}
+resource "confluent_role_binding" "app-producer-developer-read" {
+  for_each   = toset(var.kafka_topics)
+  principal  = "User:${confluent_service_account.app-producer.id}"
+  role_name  = "DeveloperRead"
+  crn_pattern = "${confluent_kafka_cluster.standard.rbac_crn}/kafka=${confluent_kafka_cluster.standard.id}/topic=${each.key}"
+}
+
+
+# New Schema Registry API key for app-producer
+resource "confluent_api_key" "app-producer-schema-registry-api-key" {
+  display_name = "app-producer-schema-registry-api-key"
+  description  = "Schema Registry API Key for app-producer"
 
   owner {
-    id          = confluent_service_account.app-manager.id
-    api_version = confluent_service_account.app-manager.api_version
-    kind        = confluent_service_account.app-manager.kind
+    id          = confluent_service_account.app-producer.id
+    api_version = confluent_service_account.app-producer.api_version
+    kind        = confluent_service_account.app-producer.kind
   }
 
   managed_resource {
@@ -211,33 +177,42 @@ resource "confluent_api_key" "schema_registry_api_key" {
     }
   }
 
-  depends_on = [data.confluent_schema_registry_cluster.essentials]
+  depends_on = [
+    confluent_role_binding.app-producer-schema-registry-read-all,
+    confluent_role_binding.app-producer-schema-registry-write-all
+  ]
 }
 
+
 resource "aws_secretsmanager_secret" "producer_kafka_config" {
-  name = "confluent-producer-kafka-config"
+  name = "confluent-config-secret-values"
 }
 
 resource "aws_secretsmanager_secret_version" "producer_kafka_config_version" {
   secret_id = aws_secretsmanager_secret.producer_kafka_config.id
 
   secret_string = jsonencode({
-    bootstrap_server            = confluent_kafka_cluster.standard.bootstrap_endpoint
-    sasl_protocol               = "SASL_SSL"
-    sasl_mechanism              = "PLAIN"
-    kafka_api_key               = confluent_api_key.app-producer-kafka-api-key.id
-    kafka_api_secret            = confluent_api_key.app-producer-kafka-api-key.secret
+    # Kafka Cluster Configuration
+    bootstrap_server = confluent_kafka_cluster.standard.bootstrap_endpoint
+    sasl_protocol    = "SASL_SSL"
+    sasl_mechanism   = "PLAIN"
+    
+    # Kafka Producer Credentials (app-producer)
+    kafka_api_key    = confluent_api_key.app-producer-kafka-api-key.id
+    kafka_api_secret = confluent_api_key.app-producer-kafka-api-key.secret
+    
+    # Schema Registry Configuration
     schema_registry_endpoint    = data.confluent_schema_registry_cluster.essentials.rest_endpoint
-    schema_registry_api_key     = confluent_api_key.schema_registry_api_key.id
-    schema_registry_api_secret  = confluent_api_key.schema_registry_api_key.secret
+    schema_registry_api_key     = confluent_api_key.app-producer-schema-registry-api-key.id  # Critical change
+    schema_registry_api_secret  = confluent_api_key.app-producer-schema-registry-api-key.secret
+    
+    # Environment Reference
     schema_registry_environment = confluent_environment.staging.id
   })
-  lifecycle {
-    prevent_destroy = true
-  }
 
   depends_on = [
     confluent_api_key.app-producer-kafka-api-key,
-    confluent_api_key.schema_registry_api_key
+    confluent_api_key.app-producer-schema-registry-api-key,  # Added dependency
+    confluent_role_binding.app-producer-schema-registry-read-all
   ]
 }

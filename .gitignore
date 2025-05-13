@@ -222,3 +222,5 @@ override.tf.json
 terraform.rc
 terraform/producer/.terraform.lock.hcl
 ec2-keypair.pem
+producer/kafka_config.json
+api-key-BUWKURPP3EQGZGYD.txt

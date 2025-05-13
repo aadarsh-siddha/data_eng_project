@@ -9,6 +9,7 @@ COPY notebooks/ notebooks/
 COPY scripts/ scripts/
 COPY resources/ resources/
 COPY main_script.py .
+COPY kafka_config.json config/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Update apt-get and install default-jdk and wget (wget is needed for the download)
